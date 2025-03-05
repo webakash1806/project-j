@@ -6,6 +6,9 @@
 
 @theme {
   --color-lightGray: #1F212F;
+  --color-iconUp: #1C183A;
+  --color-iconDown: #0E0B27;
+  --color-iconBorder: #3E3663;
 }
 
 :root {
@@ -46,6 +49,7 @@
 }
 
 .dark {
+
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.145 0 0);
@@ -139,16 +143,18 @@
     animation: shimmer 2s linear infinite;
   }
 
-  /* Example: Custom Background Image */
   .bg-custom-radial {
     background-image: radial-gradient(140% 107.13% at 50% 10%, transparent 37.41%, #63e 69.27%, #fff 100%);
+  }
+
+  .group:hover .group-hover\:bg-custom-radial {
+    background-image: radial-gradient(140% 107.13% at 60% 10%, #0B0828 37.41%, #63e 69.27%, #fff 100%) !important;
   }
 
   .bg-custom-radial-full {
     background-image: radial-gradient(140% 107.13% at 60% 10%, #0B0828 37.41%, #63e 69.27%, #fff 100%);
   }
 
-  /* Example: Custom Border Radius */
   .rounded-lg {
     border-radius: var(--radius);
   }
@@ -161,7 +167,6 @@
     border-radius: calc(var(--radius) - 4px);
   }
 
-  /* Example: Custom Colors */
   .bg-mainBg {
     background-color: #010314;
   }
@@ -174,15 +179,8 @@
     border-color: #3E3663;
   }
 
-  .bg-iconUp {
-    background-color: #1C183A;
-  }
 
-  .bg-iconDown {
-    background-color: #0E0B27;
-  }
 
-  /* Add more custom utilities as needed */
 }
 
 .mainBg {
@@ -191,6 +189,23 @@
   content: "";
   position: relative;
   z-index: 100;
+  border-radius: 30px;
+  background: radial-gradient(140% 107.13% at 50% 10%, transparent 37.41%, #63e 69.27%, #fff 100%);
+  /* background: radial-gradient(120% 120% at 50% 100%, transparent 40%, #63e 70%, #fff 100%); */
+}
+
+.productBg {
+  top: 0;
+  left: 0;
+  content: "";
+  border-radius: 30px;
+  /* background: radial-gradient(140% 107.13% at 50% 10%, transparent 37.41%, #63e 69.27%, #fff 100%); */
+  background: radial-gradient(140% 125% at 50% 100%, transparent 50%, #63e 72%, #fff 100%);
+}
+
+.productDownBg {
+  left: 0;
+  content: "";
   border-radius: 30px;
   background: radial-gradient(140% 107.13% at 50% 10%, transparent 37.41%, #63e 69.27%, #fff 100%);
   /* background: radial-gradient(120% 120% at 50% 100%, transparent 40%, #63e 70%, #fff 100%); */
